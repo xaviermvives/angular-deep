@@ -1,14 +1,26 @@
-<div class="container">
-  <div class="row my-3">
-    <div class="col col-12 col-sm-6">
-      <h4>Este es la home</h4>
-    </div>
-    <div class="col col-12 col-sm-6">
-      <mat-tab-group>
-        <mat-tab label="First"> Content 1 </mat-tab>
-        <mat-tab label="Second"> Content 2 </mat-tab>
-        <mat-tab label="Third"> Content 3 </mat-tab>
-      </mat-tab-group>
-    </div>
+<div class="container my-3">
+  <h4>Game of Thrones</h4>
+  <div class="my-3">
+    <mat-tab-group>
+      <mat-tab label="personajes">
+        <div *ngFor="let c of characters" class="col col-6 col-md-4">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>{{
+                c.firstName + "" + c.lastName
+              }}</mat-card-title>
+              <mat-card-subtitle>{{ c.family }}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image [src]="c.imageUrl" alt="character image" />
+            <mat-card-content>
+              <p>
+                {{ c.title }}
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </mat-tab>
+      <mat-tab label="continentes"> </mat-tab>
+    </mat-tab-group>
   </div>
 </div>
